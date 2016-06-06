@@ -1,6 +1,6 @@
 //
 
-var word = ['abc', 'cab', 'efg', 'hji'];
+var word = ['acb', 'abc', 'cab', 'efg', 'hji'];
 var check = 'acb';
 
 // string to object function
@@ -18,3 +18,19 @@ var strToArr = function(s){
    }
    return strToObj;
 }
+console.log(strToArr(check));
+
+// deep equality comparism
+function anagram(check, word){
+   var result = [];
+   for (var i = 0; i < word.length; i++ ){
+      // console.log(word[i]);
+      // if(strToArr(check) == strToArr(word[i])){
+
+         result.push(strToArr(word[i]));
+      // }
+      // console.log(result);
+   }
+   return result;
+}
+console.log(anagram(check, word));
