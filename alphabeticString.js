@@ -1,9 +1,14 @@
 function alphabetic(str){
-   var x = /[A-Z]/;
+   var x = /[a-zA-Z]/;
 
 
       // if(charAt(i) is alpahbet)
-      // if(str.search(x) == -1){
+      for(var i = 0; i < str.length; i++){
+
+         if(x.test(str.charAt(i))){
+            console.log('alphabetic');
+         }
+      }
       // check charAt(i-1) = '+'
       // check charAt(i+1) = '+'
 
