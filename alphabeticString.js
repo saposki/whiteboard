@@ -1,8 +1,15 @@
-function(str){
-   for(var i = 0; i < str.length; i++){
+function alphabetic(str){
+   var x = /[A-Z]/;
+
+
       // if(charAt(i) is alpahbet)
-      // check charAt(i-1) = '+' 
+      // if(str.search(x) == -1){
+      // check charAt(i-1) = '+'
       // check charAt(i+1) = '+'
 
-   }
-}
+      // tool kit
+      //    regular expressions ?
+
+};
+
+alphabetic('a+a+a+');
