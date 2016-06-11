@@ -25,16 +25,35 @@
  */
 
 function balance(str){
-   var char = str.split(''), left = 0, right = 0;
+   var char = str.split(''), leftBrk = 0, rightBrk = 0, leftParen = 0, rightParen = 0, leftSqr = 0; rightSqr = 0, flag = 1;
 
    for(var i = 0; i < char.length; i++){
-      if(char[i]=== '{'){
-         left += 1;
+      if(char[i] === '{'){
+         leftBrk += 1;
+         // flag = 1;
       }
-      if(char[i]=== '}'){
-         right += 1;
+      if(char[i] === '}'){
+         rightBrk += 1;
+         flag = 0;
       }
-      if(left == right){
+      if(char[i] === '('){
+         leftParen += 1;
+         flag = 1;
+      }
+      if(char[i] === ')'){
+         rightParen += 1;
+         flag = 0;
+      }
+      if(char[i] === '['){
+         leftSqr += 1;
+         flag = 1;
+      }
+      if(char[i] === ']'){
+         rightSqr += 1;
+         flag = 0;
+      }
+
+      if(leftBrk == rightBrk && leftParen == rightParen && leftSqr == rightSqr && flag == 0){
          return true;
       }
 
@@ -42,4 +61,4 @@ function balance(str){
    return false;
 }
 
-console.log(balance('{'));
+console.log(balance('[]()'));
