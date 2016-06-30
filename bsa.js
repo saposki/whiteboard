@@ -22,20 +22,42 @@ var binarySearch = function (array, target) {
   // 		else
   // 			repeat(1 & 2) on left array till target is found
 
+     var left = [], right = [], copy = [];
+     // check left
 
-  if(target === array[Math.floor(array.length/2)]){
-     console.log('found');
-   //   console.log(array.indexOf(array[Math.floor(array.length/2)]));
-     return;
-  }else if(target < array[Math.floor(array.length/2)]){
-     console.log('at bottom');
-     binarySearch(array.splice(0, Math.ceil(array.length/2)))
-  }else if(target > array[Math.floor(array.length/2)]){
-     console.log('on top');
- }
+     for(var i =0; i < Math.floor(array.length/2); i++){
+        left.push(array[i]);
+     }
+     //console.log(left);
+
+     // check right
+     for(var i = Math.floor(array.length/2); i < array.length; i++){
+        right.push(array[i]);
+     }
+     //console.log(right);
+
+     var found = false;
+
+     if(target === left[left.length-1]){
+        console.log('found');
+        found = true;
+        if(found){
+           console.log(left[left.length-1]);
+        }
+        return;
+     }else if(target < left[left.length-1]){
+        console.log('at bottom');
+        console.log('searching bottom......');
+        binarySearch(left, target)
+     }else if(target > left[left.length-1]){
+        console.log('on top');
+        console.log('searching top....');
+      //   check top
+      binarySearch(right, target)
+   }else{
+      console.log('target is not in set');
+   }
 
 };
 
-
-
-binarySearch([1,2,3,4,5,6,7,8,9,10], 7);
+binarySearch([1,2,3,4,5,6,7,8,9,10,11,12], 2);
