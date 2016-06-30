@@ -21,4 +21,21 @@ var binarySearch = function (array, target) {
   //				repeat(1 & 2) on right array till target is found
   // 		else
   // 			repeat(1 & 2) on left array till target is found
+
+
+  if(target === array[Math.floor(array.length/2)]){
+     console.log('found');
+   //   console.log(array.indexOf(array[Math.floor(array.length/2)]));
+     return;
+  }else if(target < array[Math.floor(array.length/2)]){
+     console.log('at bottom');
+     binarySearch(array.splice(0, Math.ceil(array.length/2)))
+  }else if(target > array[Math.floor(array.length/2)]){
+     console.log('on top');
+ }
+
 };
+
+
+
+binarySearch([1,2,3,4,5,6,7,8,9,10], 7);
