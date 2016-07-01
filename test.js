@@ -7,4 +7,4 @@ var arr = [
 
 
   console.log(arr);
-  console.log(arr[][0]);
+  console.log(arr[0][1]);

@@ -38,17 +38,25 @@
 
 var characterFrequency = function(string) {
    var result = [];
-   charArray = [];
-   // charArray.push(string.charAt(i))
+   var resultObj = {};
+   for(var i in string){
+      var char = string.charAt(i)
+      if(char in resultObj){
+         resultObj[char] = resultObj[char] + 1;
+      }else{
+         resultObj[char] = 1;
+      }
+   }
 
-   for(var i = 0; i < string.length; i++){
-      var frequency = 0;
-      var character = string.charAt(i);
-
-      charArray.push(string.charAt(i))
+   for(var key in resultObj){
+      charArray = [];
+      charArray.push(key);
+      charArray.push(resultObj[key]);
       result.push(charArray);
    }
+   console.log(resultObj);
   return result;
 };
 
-console.log(characterFrequency('orobosa'));
+// test
+console.log(characterFrequency('mmmaaaiiibbb'));
