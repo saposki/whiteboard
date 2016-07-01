@@ -37,5 +37,18 @@
 
 
 var characterFrequency = function(string) {
+   var result = [];
+   charArray = [];
+   // charArray.push(string.charAt(i))
+
+   for(var i = 0; i < string.length; i++){
+      var frequency = 0;
+      var character = string.charAt(i);
+
+      charArray.push(string.charAt(i))
+      result.push(charArray);
+   }
   return result;
 };
+
+console.log(characterFrequency('orobosa'));
