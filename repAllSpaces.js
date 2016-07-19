@@ -2,7 +2,8 @@
 // Input: "Mr John Smith ", 13
 // Output: "Mr%20John%20Smith"
 
-var constString  = "%20"
+var constString  = "%20";
+
 var rep = function(string){
    var returnString = "";
    for(var i = 0; i < string.length; i++){
@@ -11,7 +12,7 @@ var rep = function(string){
          returnString += constString;
          i++;
       }
-      returnString += string.charAt(i)
+      returnString += string.charAt(i);
    }
    return returnString;
 }
