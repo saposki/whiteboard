@@ -11,13 +11,13 @@ var unique = function(string){
             obj[string.charAt(i)] = 1;
          }
       }
+      // console.log(obj);
       if(count){
          console.log('duplicates');
       }else{
          console.log('unique');
       }
 }
-
 
 unique('abddc');
 unique('abcdef');
